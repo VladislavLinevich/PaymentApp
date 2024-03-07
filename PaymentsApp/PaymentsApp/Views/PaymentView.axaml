@@ -2,7 +2,21 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:views="clr-namespace:PaymentsApp.Views"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="PaymentsApp.Views.PaymentView">
-  Welcome to Payment!
+	<DockPanel Name="BasePanel">
+		<Grid DockPanel.Dock="Top">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="auto"></ColumnDefinition>
+				<ColumnDefinition Width="auto"></ColumnDefinition>
+				<ColumnDefinition Width="*"></ColumnDefinition>
+			</Grid.ColumnDefinitions>
+			<views:DataNavigationBar DataContext="{Binding NavigationBar}" Height="50" Grid.Column="0"/>
+			
+		</Grid>
+		<ListBox Name="Payments" ItemsSource="{Binding ItemsDataView, Mode=OneWay}">
+			
+		</ListBox>
+	</DockPanel>
 </UserControl>

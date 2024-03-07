@@ -6,12 +6,12 @@
         xmlns:views="clr-namespace:PaymentsApp.Views"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="400"
         x:Class="PaymentsApp.Views.MainWindow"
-        Icon="/Assets/avalonia-logo.ico"
+        Icon="/Assets/1485909538_money-safe-box.ico"
         Title="Профсоюзные выплаты">
   <Design.DataContext>
     <vm:MainViewModel/>
   </Design.DataContext>
-  <TabControl Name="Tabs" ItemsSource="{Binding Pages}" SelectedIndex="{Binding SelectedTab, Mode=TwoWay}">
+  <TabControl Name="Tabs" ItemsSource="{Binding Pages}" >
     <TabControl.ItemTemplate>
       <DataTemplate>
         <TextBlock Text="{Binding Title}" />

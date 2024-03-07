@@ -1,0 +1,39 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="50"
+             x:Class="PaymentsApp.Views.DataNavigationBar">
+	<UserControl.Styles>
+		<Style Selector="Image:disabled">
+			<Setter Property="Opacity" Value="0.30" />
+		</Style>
+	</UserControl.Styles>
+	<StackPanel Orientation="Horizontal" Margin="1,1,1,1">
+		<Button Width="50" Height="40" Margin="0,0,5,0" Command="{Binding FirstCommand}" Focusable="False">
+			<Image Source="{SvgImage /Images/Oxygen480-actions-arrow-left-double.svg}"></Image >
+		</Button>
+		<Button Width="50" Height="40" Margin="0,0,5,0" Command="{Binding PreviousCommand}" Focusable="False">
+			<Image Source="{SvgImage /Images/Oxygen480-actions-arrow-left.svg}"></Image >
+		</Button>
+		<Button Width="50" Height="40" Margin="0,0,5,0" Command="{Binding Command}" Focusable="False">
+			<Image Source="{SvgImage /Images/Oxygen480-actions-list-add.svg}"></Image >
+		</Button>
+		<Button Width="50" Height="40" Margin="0,0,5,0" Command="{Binding Command}" Focusable="False">
+			<Image Source="{SvgImage /Images/1473898757_flat-style-circle-edit.svg}"></Image >
+		</Button>
+		<Button Width="50" Height="40" Margin="0,0,5,0" Command="{Binding Command}" Focusable="False">
+			<Image Source="{SvgImage /Images/Oxygen480-actions-list-remove.svg}"></Image >
+		</Button>
+		<Button Width="50" Height="40" Margin="0,0,5,0" Command="{Binding NextCommand}" Focusable="False">
+			<Image Source="{SvgImage /Images/Oxygen480-actions-arrow-right.svg}"></Image >
+		</Button>
+		<Button Width="50" Height="40" Margin="0,0,5,0" Command="{Binding LastCommand}" Focusable="False">
+			<Image Source="{SvgImage /Images/Oxygen480-actions-arrow-right-double.svg}"></Image >
+		</Button>
+		<Button Width="50" Height="40" Margin="30,0,0,0" Command="{Binding Command}" Focusable="False">
+			<Image Source="{SvgImage /Images/1473898174_view-refresh.svg}"></Image >
+		</Button>
+		
+	</StackPanel>
+</UserControl>
