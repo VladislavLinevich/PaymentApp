@@ -4,7 +4,7 @@
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
 # My ignores
-PaymentsApp/PaymentsApp/Database/
+PaymentsApp/Database/
 
 # User-specific files
 *.rsuser
