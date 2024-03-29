@@ -17,12 +17,15 @@ namespace PaymentsApp.ViewModels
 
         /* public Func<bool> RefreshCanExecute { get; set; } = () => true;*/
 
-        public DataNavigationBarViewModel(ISelectedItem<T> selected)
+        public DataNavigationBarViewModel(ISelectedItem<T> selected, Action newCommand, Action editCommand, Action deleteCommand)
         {
             FirstCommand = ReactiveCommand.Create(() => { selected.SelectedIndex = 0; }, CanExecuteFirst(selected));
             PreviousCommand = ReactiveCommand.Create(() => { selected.SelectedIndex--; }, CanExecutePrevious(selected));
             NextCommand = ReactiveCommand.Create(() => { selected.SelectedIndex++; }, CanExecuteNext(selected));
             LastCommand = ReactiveCommand.Create(() => { selected.SelectedIndex = selected.Items.Count - 1; }, CanExecuteLast(selected));
+            NewCommand = ReactiveCommand.Create(newCommand);
+            EditCommand = ReactiveCommand.Create(editCommand, CanExecuteEditAndDelete(selected));
+            DeleteCommand = ReactiveCommand.Create(deleteCommand, CanExecuteEditAndDelete(selected));
 
             /*FirstCommand = new RelayCommand(() =>
             {
@@ -66,10 +69,16 @@ namespace PaymentsApp.ViewModels
                 .WhenAnyValue(x => x.SelectedIndex, index => index < selected.Items.Count - 1);
         }
 
-        /*    public ICommand NewCommand { get; private set; }
-            public ICommand DeleteCommand { get; private set; }
-            public ICommand EditCommand { get; private set; }
-            public ICommand RefreshCommand { get; private set; }*/
+        private IObservable<bool> CanExecuteEditAndDelete(ISelectedItem<T> selected)
+        {
+            return selected
+                .WhenAnyValue(x => x.Items.Count, count => count > 0);
+        }
+
+        public ICommand NewCommand { get; private set; }
+        public ICommand DeleteCommand { get; private set; }
+         public ICommand EditCommand { get; private set; }
+         //public ICommand RefreshCommand { get; private set; }
 
     }
 }

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace PaymentsApp.Models
 {
-    public class Department
+    public class Department: ICloneable
     {
         public int Id { get; set; }
 
@@ -20,5 +20,10 @@ namespace PaymentsApp.Models
         public List<Employee> Employees { get; set; }
 
         public List<Payment> Payments { get; set; }
+
+        public object Clone()
+        {
+            return MemberwiseClone();
+        }
     }
 }

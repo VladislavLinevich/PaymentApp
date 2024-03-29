@@ -16,13 +16,13 @@
 		<Button Width="50" Height="40" Margin="0,0,5,0" Command="{Binding PreviousCommand}" Focusable="False">
 			<Image Source="{SvgImage /Images/Oxygen480-actions-arrow-left.svg}"></Image >
 		</Button>
-		<Button Width="50" Height="40" Margin="0,0,5,0" Command="{Binding Command}" Focusable="False">
+		<Button Width="50" Height="40" Margin="0,0,5,0" Command="{Binding NewCommand}" Focusable="False">
 			<Image Source="{SvgImage /Images/Oxygen480-actions-list-add.svg}"></Image >
 		</Button>
-		<Button Width="50" Height="40" Margin="0,0,5,0" Command="{Binding Command}" Focusable="False">
+		<Button Width="50" Height="40" Margin="0,0,5,0" Command="{Binding EditCommand}" Focusable="False">
 			<Image Source="{SvgImage /Images/1473898757_flat-style-circle-edit.svg}"></Image >
 		</Button>
-		<Button Width="50" Height="40" Margin="0,0,5,0" Command="{Binding Command}" Focusable="False">
+		<Button Width="50" Height="40" Margin="0,0,5,0" Command="{Binding DeleteCommand}" Focusable="False">
 			<Image Source="{SvgImage /Images/Oxygen480-actions-list-remove.svg}"></Image >
 		</Button>
 		<Button Width="50" Height="40" Margin="0,0,5,0" Command="{Binding NextCommand}" Focusable="False">

@@ -1,0 +1,23 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="110"
+        x:Class="PaymentsApp.Views.DeleteWindow"
+		Icon="/Assets/1485909538_money-safe-box.ico"
+        Title="{Binding Title}"
+		Width="500" Height="110"
+        WindowStartupLocation="CenterOwner"
+		CanResize="False">
+	<StackPanel Margin="4">
+		<Label x:Name="Label" Content="{Binding Message}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" MinHeight="40" MinWidth="300"/>
+		<StackPanel Margin="3" Orientation="Horizontal" FlowDirection="RightToLeft">
+			<Button Content="Нет" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="75" Margin="0, 10, 10, 0"
+            Command="{Binding NoCommand}"
+            CommandParameter="{Binding $parent[Window]}"/>
+			<Button Content="Да" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="75" Margin="0, 10, 0, 0"
+            Command="{Binding YesCommand}"
+            CommandParameter="{Binding $parent[Window]}"/>
+		</StackPanel>
+	</StackPanel>
+</Window>

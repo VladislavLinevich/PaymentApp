@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PaymentsApp.Models
 {
-    public class PaymentType
+    public class PaymentType : ICloneable
     {
         public int Id { get; set; }
 
@@ -17,5 +17,10 @@ namespace PaymentsApp.Models
         public string Name { get; set; }
 
         public List<Payment> Payments { get; set; }
+
+        public object Clone()
+        {
+            return MemberwiseClone();
+        }
     }
 }
